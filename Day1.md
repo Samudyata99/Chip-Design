@@ -1,17 +1,45 @@
 # Chip-Design
-Exploring the terminal:
+
+***Day 1:
+Using Open-Source EDA, OpenLANE and Sky130 PDK to understand some basic functions of the physical design process.***
+
+
+*Exploring the terminal:*
+**Note** - to open the terminal in Linux, shortcut Ctrl+Alt+T can be used.
 ![image 1](https://github.com/Samudyata99/Chip-Design/blob/main/Day1Picture1.png?raw=true)
 ![image 2](https://github.com/Samudyata99/Chip-Design/blob/main/Day1Picture2.png?raw=true)
 ![image 3](https://github.com/Samudyata99/Chip-Design/blob/main/Day1Picture3.png?raw=true)
+
+*Running interactive mode and and designing picorv32a:*
 ![image 4](https://github.com/Samudyata99/Chip-Design/blob/main/Picture4.png?raw=true)
 ![image 5](https://github.com/Samudyata99/Chip-Design/blob/main/Picture5.png?raw=true)
+
+Now, picorv32a can be opened as a file (using *cd* command) and contents can be accessed (using *ls -ltr* command) as done previously. A file called 'runs' can be opened which has just been created as seen in the above process. 
+
 ![image 6](https://github.com/Samudyata99/Chip-Design/blob/main/Picture6.png?raw=true)
+
+From here, the tmp file is opened using *cd*, and using *ls -ltr*, we can find a merged.lef file. Opening this with a *less* command, the output is as shown:
 ![image 7](https://github.com/Samudyata99/Chip-Design/blob/main/Picture7.png?raw=true)
 ![image 8](https://github.com/Samudyata99/Chip-Design/blob/main/Picture8.png?raw=true)
+
+We can exit this and return to the original screen using the command Ctrl+Z. Here, on opening the file called 'logs', the files 'results' and 'reports' can be accessed too. 
+
 ![image 9](https://github.com/Samudyata99/Chip-Design/blob/main/Picture9.png?raw=true)
 ![image 10](https://github.com/Samudyata99/Chip-Design/blob/main/Picture10.png?raw=true)
+
+Within 'logs', opening the file 'config.tcl':
 ![image 11](https://github.com/Samudyata99/Chip-Design/blob/main/Picture11.png?raw=true)
+
+'cmds.log':
 ![image 12](https://github.com/Samudyata99/Chip-Design/blob/main/Picture12.png?raw=true)
+
+Now, to run the synthesis and find the required information, we type *run_synthesis* below the interactive OpenLANE interface (images 4 and 5). It is important to note that "package require openlane 0.9" and "prep -design picorv32a" both have to be entered for *run_synthesis* to work properly. As shown below, the synthesis output is quite large and has around 29 segments with various information. This is the end of the output - 
 ![image 13](https://github.com/Samudyata99/Chip-Design/blob/main/Picture13.png?raw=true)
+
+The given assignment is to calculate the flip-flop ratio from the given data. This information can be found in the 20th segment. (Searching on Linux can be done wuth Shift+Ctrl+F). The numbers highlighted in blue show the values to be considered for this ratio calculation. 
 ![image 14](https://github.com/Samudyata99/Chip-Design/blob/main/Picture14.png?raw=true)
+
+The ratio is 1613/18036 = 0.089 (approx.) As a percentage, this is represented as around 8.93. 
+
+The final step after this is to review the results of the synthesis using a **picorv32a.synthesis.v** file that should be accessed from the **synthesis folder**. 
 ![image 15](https://github.com/Samudyata99/Chip-Design/blob/main/Picture15.png?raw=true) 
